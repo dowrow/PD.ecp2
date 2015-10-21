@@ -53,6 +53,8 @@ public class Dispatcher {
 			if ("voteTheme".equals(action)) {
 				votingPresenter.setters(request.getParams());
 				nextView = votingPresenter.voteTheme(model);
+			}else {
+				model.put("error", "Acción no permitida: " + action);
 			}
 		}
 		
