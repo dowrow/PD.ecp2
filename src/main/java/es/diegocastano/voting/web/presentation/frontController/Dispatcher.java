@@ -47,6 +47,13 @@ public class Dispatcher {
 				model.put("error", "Acción no permitida: " + action);
 			}
 			break;
+		case "VotingPresenter":
+			VotingPresenter votingPresenter = new VotingPresenter();
+			if ("voteTheme".equals(action)) {
+				String themeName = request.getParams().get("themeName");
+				int vote = Integer.parseInt(request.getParams().get("value"));
+				nextView = votingPresenter.voteTheme(model, themeName, vote);
+			}
 		}
 		
 		this.show(nextView, model);

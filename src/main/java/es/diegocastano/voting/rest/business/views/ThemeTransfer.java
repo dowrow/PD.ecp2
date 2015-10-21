@@ -27,4 +27,9 @@ public class ThemeTransfer {
 		this.average = average;
 	}
 	
+	@Override
+	public String toString() {
+		return "ThemeTransfer [themeName=" + themeName + ", average=" + average + "]";
+	}
+	
 }

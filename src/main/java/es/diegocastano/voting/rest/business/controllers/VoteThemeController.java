@@ -13,12 +13,12 @@ public class VoteThemeController {
 
 	ShowVotingController showVotingController = new ShowVotingController();
 	
-	public List<ThemeTransfer> voteTheme(String themeName, int value) {
+	public List<ThemeTransfer> voteTheme(String themeName, int vote) {
 		VoteDao voteDao = DaoFactory.getFactory().getVoteDao();
 		ThemeDao themeDao = DaoFactory.getFactory().getThemeDao();
 		int id = voteDao.findAll().size();
 		Theme theme = themeDao.findByName(themeName);
-		voteDao.create(new Vote(id, value, theme));
+		voteDao.create(new Vote(id, vote, theme));
 		return showVotingController.showVoting();
 	}
 }
