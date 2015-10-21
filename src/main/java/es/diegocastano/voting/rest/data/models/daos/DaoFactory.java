@@ -13,18 +13,8 @@ public abstract class DaoFactory {
         return factory;
     }
 
-	public ThemeDao getThemeDao() {
-		// TODO Auto-generated method stub
-		return null;
-	}
+	public abstract ThemeDao getThemeDao();
 
-	public VoteDao getVoteDao() {
-		// TODO Auto-generated method stub
-		return null;
-	}
-
-    //public abstract Entity1Dao getEntity1Dao();
-
-    //public abstract Entity2Dao getEntity2Dao();
+	public abstract VoteDao getVoteDao();
 
 }

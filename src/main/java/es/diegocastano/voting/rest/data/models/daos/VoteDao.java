@@ -5,7 +5,7 @@ import java.util.List;
 import es.diegocastano.voting.rest.business.models.entities.Theme;
 import es.diegocastano.voting.rest.business.models.entities.Vote;
 
-public interface VoteDao {
+public interface VoteDao extends GenericDao<Vote, Integer> {
 
 	List<Vote> findByTheme(Theme theme);
 
