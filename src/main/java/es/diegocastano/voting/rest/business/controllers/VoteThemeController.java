@@ -4,10 +4,10 @@ import java.util.List;
 
 import es.diegocastano.voting.rest.business.models.entities.Theme;
 import es.diegocastano.voting.rest.business.models.entities.Vote;
+import es.diegocastano.voting.rest.business.views.ThemeTransfer;
 import es.diegocastano.voting.rest.data.models.daos.DaoFactory;
 import es.diegocastano.voting.rest.data.models.daos.ThemeDao;
 import es.diegocastano.voting.rest.data.models.daos.VoteDao;
-import es.diegocastano.voting.rest.business.views.ThemeTransfer;
 
 public class VoteThemeController {
 
