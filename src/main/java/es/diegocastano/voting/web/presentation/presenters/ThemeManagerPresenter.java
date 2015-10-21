@@ -1,13 +1,15 @@
 package es.diegocastano.voting.web.presentation.presenters;
 
 import es.diegocastano.voting.rest.business.controllers.CreateThemeController;
+import es.diegocastano.voting.rest.business.controllers.ShowThemeManagerController;
 import es.diegocastano.voting.web.presentation.models.Model;
 
 public class ThemeManagerPresenter {
 
 	
 	public String process(Model model) {
-		model.put("themes", "[]");
+		ShowThemeManagerController showThemeManagerController = new ShowThemeManagerController();
+		model.put("themes", showThemeManagerController.showThemeManager()	);
 		return "ThemeManagerView";
 	}
 
