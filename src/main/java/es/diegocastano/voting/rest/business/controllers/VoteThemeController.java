@@ -12,7 +12,7 @@ import es.diegocastano.voting.rest.data.models.daos.VoteDao;
 public class VoteThemeController {
 
 	ShowVotingController showVotingController = new ShowVotingController();
-	
+
 	public List<ThemeTransfer> voteTheme(String themeName, int vote) {
 		VoteDao voteDao = DaoFactory.getFactory().getVoteDao();
 		ThemeDao themeDao = DaoFactory.getFactory().getThemeDao();

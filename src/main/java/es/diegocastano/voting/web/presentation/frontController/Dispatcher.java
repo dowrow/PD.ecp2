@@ -32,7 +32,7 @@ public class Dispatcher {
 	}
 
 	public void doPost(HttpRequest request, HttpResponse response) {
-		
+
 		Model model = new Model();
 		String presenter = request.getPath() + "Presenter";
 		String action = request.getParams().get("action");
@@ -40,7 +40,7 @@ public class Dispatcher {
 
 		switch (presenter) {
 		case "ThemeManagerPresenter":
-			ThemeManagerPresenter themeManagerPresenter = new ThemeManagerPresenter();		
+			ThemeManagerPresenter themeManagerPresenter = new ThemeManagerPresenter();
 			if ("createTheme".equals(action)) {
 				themeManagerPresenter.setters(request.getParams());
 				nextView = themeManagerPresenter.createTheme(model);
@@ -53,11 +53,11 @@ public class Dispatcher {
 			if ("voteTheme".equals(action)) {
 				votingPresenter.setters(request.getParams());
 				nextView = votingPresenter.voteTheme(model);
-			}else {
+			} else {
 				model.put("error", "Acción no permitida: " + action);
 			}
 		}
-		
+
 		this.show(nextView, model);
 	}
 

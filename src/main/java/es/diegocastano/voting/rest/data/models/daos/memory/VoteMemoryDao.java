@@ -8,27 +8,27 @@ import es.diegocastano.voting.rest.business.models.entities.Theme;
 import es.diegocastano.voting.rest.business.models.entities.Vote;
 import es.diegocastano.voting.rest.data.models.daos.VoteDao;
 
-public class VoteMemoryDao extends GenericMemoryDao<Vote, Integer> implements VoteDao {
+public class VoteMemoryDao extends GenericMemoryDao<Vote, Integer>implements VoteDao {
 
-    public VoteMemoryDao() {
-        this.setMap(new HashMap<Integer, Vote>());
-    }
+	public VoteMemoryDao() {
+		this.setMap(new HashMap<Integer, Vote>());
+	}
 
-    @Override
-    protected Integer getId(Vote entity) {
-        return entity.getId();
-    }
+	@Override
+	protected Integer getId(Vote entity) {
+		return entity.getId();
+	}
 
-    @Override
-    public List<Vote> findByTheme(Theme theme) {
-        List<Vote> votes = new ArrayList<>();
-        List<Vote> votesAll = this.findAll();
-        for (Vote vote : votesAll) {
-            if (theme.equals(vote.getTheme())) {
-                votes.add(vote);
-            }
-        }
-        return votes;
-    }
+	@Override
+	public List<Vote> findByTheme(Theme theme) {
+		List<Vote> votes = new ArrayList<>();
+		List<Vote> votesAll = this.findAll();
+		for (Vote vote : votesAll) {
+			if (theme.equals(vote.getTheme())) {
+				votes.add(vote);
+			}
+		}
+		return votes;
+	}
 
 }

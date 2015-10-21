@@ -10,13 +10,13 @@ public class VotingPresenter {
 
 	private String themeName;
 	private int vote;
-	
+
 	public String start(Model model) {
 		StartController startController = new StartController();
 		model.put("themes", startController.start());
 		return "VotingView";
 	}
-	
+
 	public String voteTheme(Model model) {
 		VoteThemeController voteThemeController = new VoteThemeController();
 		model.put("themes", voteThemeController.voteTheme(themeName, vote));

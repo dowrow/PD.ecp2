@@ -9,7 +9,7 @@ import es.diegocastano.voting.web.presentation.models.Model;
 public class ThemeManagerPresenter {
 
 	private String themeName;
-	
+
 	public String showThemeManager(Model model) {
 		ShowThemeManagerController showThemeManagerController = new ShowThemeManagerController();
 		model.put("themes", showThemeManagerController.showThemeManager());

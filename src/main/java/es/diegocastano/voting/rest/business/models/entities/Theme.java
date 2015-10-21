@@ -1,25 +1,26 @@
 package es.diegocastano.voting.rest.business.models.entities;
+
 public class Theme {
 
-    private int id;
+	private int id;
 
-    private String name;
+	private String name;
 
-    public Theme() {
-    }
+	public Theme() {
+	}
 
-    public Theme(int id, String name) {
-        super();
-        this.id = id;
-        this.name = name;
-    }
+	public Theme(int id, String name) {
+		super();
+		this.id = id;
+		this.name = name;
+	}
 
-    public int getId() {
-        return id;
-    }
+	public int getId() {
+		return id;
+	}
 
-    public String getName() {
-        return name;
-    }
+	public String getName() {
+		return name;
+	}
 
 }

@@ -11,20 +11,20 @@ import es.diegocastano.voting.rest.data.models.daos.ThemeDao;
 import es.diegocastano.voting.rest.data.models.daos.VoteDao;
 
 public class ShowVotingController {
-	
+
 	public List<ThemeTransfer> showVoting() {
 		ThemeDao themeDao = DaoFactory.getFactory().getThemeDao();
 		VoteDao voteDao = DaoFactory.getFactory().getVoteDao();
-		
+
 		List<Theme> themes = themeDao.findAll();
-		
+
 		List<ThemeTransfer> themeTransfers = new ArrayList<ThemeTransfer>();
 		for (Theme theme : themes) {
 			List<Vote> votes = voteDao.findByTheme(theme);
 			double average = getAverage(votes);
 			themeTransfers.add(new ThemeTransfer(theme.getName(), average));
 		}
-		
+
 		return themeTransfers;
 	}
 
@@ -33,6 +33,6 @@ public class ShowVotingController {
 		for (Vote vote : votes) {
 			average += vote.getVote();
 		}
-		return average/votes.size();
+		return average / votes.size();
 	}
 }
