@@ -26,4 +26,5 @@ public class ThemeTransfer {
 	private void setAverage(double average) {
 		this.average = average;
 	}
+	
 }
